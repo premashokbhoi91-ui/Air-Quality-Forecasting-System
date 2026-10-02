@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block title %}Locations | Air Quality Forecasting System{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <span class="chip">Monitoring Locations</span>
+
+    <h1>
+        <span class="ln l1">
+            <span>Delhi</span>
+        </span>
+
+        <span class="ln l2">
+            <span>Air Quality</span>
+        </span>
+    </h1>
+
+    <p class="blurb">
+        Monitor air quality conditions from the ITO CPCB
+        monitoring station in Delhi.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     LOCATION OVERVIEW
+     ===================================================== -->
+
+<div class="bottom">
+
+    <div class="forecast">
+
+        <!-- MAIN LOCATION CARD -->
+
+        <div class="card location-main-card">
+
+            <div class="place">
+                <svg><use href="#i-pin"/></svg>
+                Delhi, India
+            </div>
+
+            <div class="location-station">
+                ITO
+            </div>
+
+            <div class="location-info">
+
+                <div>
+                    <span>Station</span>
+                    <strong>ITO CPCB</strong>
+                </div>
+
+                <div>
+                    <span>City</span>
+                    <strong>Delhi</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Active</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- POLLUTANTS -->
+
+        <div class="pollutant-grid">
+
+            <div class="card row">
+
+                <div>
+                    <div class="loc">PM2.5</div>
+                    <div class="cond">95 µg/m³</div>
+                </div>
+
+                <div class="rtemp">
+                    PM₂.₅
+                </div>
+
+            </div>
+
+
+            <div class="card row">
+
+                <div>
+                    <div class="loc">PM10</div>
+                    <div class="cond">145 µg/m³</div>
+                </div>
+
+                <div class="rtemp">
+                    PM₁₀
+                </div>
+
+            </div>
+
+
+            <div class="card row">
+
+                <div>
+                    <div class="loc">NO₂</div>
+                    <div class="cond">48 µg/m³</div>
+                </div>
+
+                <div class="rtemp">
+                    NO₂
+                </div>
+
+            </div>
+
+
+            <div class="card row">
+
+                <div>
+                    <div class="loc">Ozone</div>
+                    <div class="cond">72 µg/m³</div>
+                </div>
+
+                <div class="rtemp">
+                    O₃
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         AQI SUMMARY
+         ================================================= -->
+
+    <aside class="rail">
+
+        <div class="card big">
+
+            <div class="place">
+                Current AQI
+            </div>
+
+            <div class="big-temp">
+                185
+            </div>
+
+            <div class="metrics">
+                <span>Air Quality</span>
+                <span>Moderate</span>
+            </div>
+
+        </div>
+
+
+        <div class="card row">
+
+            <div>
+                <div class="loc">Monitoring Station</div>
+                <div class="cond">ITO CPCB</div>
+            </div>
+
+            <div class="rtemp">
+                AQI
+            </div>
+
+        </div>
+
+
+        <div class="card row">
+
+            <div>
+                <div class="loc">Data Source</div>
+                <div class="cond">CPCB</div>
+            </div>
+
+            <div class="rtemp">
+                DATA
+            </div>
+
+        </div>
+
+
+        <div class="card row">
+
+            <div>
+                <div class="loc">Location Status</div>
+                <div class="cond">Monitoring Active</div>
+            </div>
+
+            <div class="rtemp">
+                ●
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- =====================================================
+     LOCATION INFORMATION
+     ===================================================== -->
+
+<div class="location-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <div class="section-eyebrow">
+                MONITORING INFORMATION
+            </div>
+
+            <h2>
+                ITO CPCB Station
+            </h2>
+
+            <p>
+                This monitoring location provides historical
+                air quality observations that will be used
+                for analysis and AQI forecasting.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="location-info-grid">
+
+        <div class="card location-info-card">
+
+            <div class="section-eyebrow">
+                LOCATION
+            </div>
+
+            <h3>
+                Delhi, India
+            </h3>
+
+            <p>
+                Selected city for the initial air quality
+                forecasting system.
+            </p>
+
+        </div>
+
+
+        <div class="card location-info-card">
+
+            <div class="section-eyebrow">
+                STATION
+            </div>
+
+            <h3>
+                ITO CPCB
+            </h3>
+
+            <p>
+                The selected monitoring station used for
+                the project's historical pollution dataset.
+            </p>
+
+        </div>
+
+
+        <div class="card location-info-card">
+
+            <div class="section-eyebrow">
+                DATA
+            </div>
+
+            <h3>
+                Historical Observations
+            </h3>
+
+            <p>
+                Pollution measurements will be processed
+                and prepared for machine learning forecasting.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

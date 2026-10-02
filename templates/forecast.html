@@ -1,0 +1,347 @@
+{% extends "base.html" %} {% block title %}AQI Forecast | Air Quality
+Forecasting System{% endblock %} {% block content %}
+
+<div class="hero">
+  <span class="chip">AQI Forecast</span>
+
+  <h1>
+    <span class="ln l1">
+      <span>Air Quality</span>
+    </span>
+
+    <span class="ln l2">
+      <span>Forecast</span>
+    </span>
+  </h1>
+
+  <p class="blurb">
+    Forecast future AQI levels for Delhi using historical pollution data and
+    machine learning-based time-series forecasting.
+  </p>
+</div>
+
+<div class="bottom">
+  <!-- =====================================================
+         AQI FORECAST
+         ===================================================== -->
+
+  <div class="forecast">
+    <div class="temps">
+      <div class="t">
+        <span>185</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+
+      <div class="t">
+        <span>172</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud2" />
+        </svg>
+      </div>
+
+      <div class="t">
+        <span>160</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud2" />
+        </svg>
+      </div>
+
+      <div class="t">
+        <span>148</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-hail" />
+        </svg>
+      </div>
+
+      <div class="t">
+        <span>155</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-sun" />
+        </svg>
+      </div>
+
+      <div class="t">
+        <span>168</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- AQI TREND GRAPH -->
+
+    <svg class="wave" viewBox="0 0 835 140" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="forecastFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".22" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="forecastLine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity=".2" />
+
+          <stop offset=".5" stop-color="#fff" stop-opacity="1" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity=".3" />
+        </linearGradient>
+      </defs>
+
+      <path
+        class="fill"
+        d="M0,72
+                     C110,32 200,98 320,62
+                     C440,26 520,92 620,56
+                     C700,28 780,60 835,48
+                     L835,140
+                     L0,140 Z"
+        fill="url(#forecastFill)"
+      />
+
+      <path
+        class="line"
+        pathLength="1"
+        d="M0,72
+                     C110,32 200,98 320,62
+                     C440,26 520,92 620,56
+                     C700,28 780,60 835,48"
+        fill="none"
+        stroke="url(#forecastLine)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+    </svg>
+
+    <!-- FORECAST TIME -->
+
+    <div class="days">
+      <span class="on">Now</span>
+      <span>+1h</span>
+      <span>+2h</span>
+      <span>+3h</span>
+      <span>+4h</span>
+      <span>+5h</span>
+    </div>
+  </div>
+
+  <!-- =====================================================
+         FORECAST INFORMATION
+         ===================================================== -->
+
+  <aside class="rail">
+    <!-- CURRENT AQI -->
+
+    <div class="card big">
+      <div class="place">
+        <svg>
+          <use href="#i-pin" />
+        </svg>
+
+        Delhi, India
+      </div>
+
+      <div class="big-temp">185</div>
+
+      <div class="metrics">
+        <span> Current AQI </span>
+
+        <span> Moderate </span>
+      </div>
+    </div>
+
+    <!-- 6 HOUR FORECAST -->
+
+    <div class="card row">
+      <div>
+        <div class="loc">Forecast Horizon</div>
+
+        <div class="cond">Next 6 Hours</div>
+      </div>
+
+      <div class="rtemp">172</div>
+    </div>
+
+    <!-- 24 HOUR FORECAST -->
+
+    <div class="card row">
+      <div>
+        <div class="loc">Forecast Horizon</div>
+
+        <div class="cond">Next 24 Hours</div>
+      </div>
+
+      <div class="rtemp">160</div>
+    </div>
+
+    <!-- 72 HOUR FORECAST -->
+
+    <div class="card row">
+      <div>
+        <div class="loc">Forecast Horizon</div>
+
+        <div class="cond">Next 72 Hours</div>
+      </div>
+
+      <div class="rtemp">AQI</div>
+    </div>
+
+    <!-- MONITORING STATION -->
+
+    <div class="card row">
+      <div>
+        <div class="loc">Monitoring Station</div>
+
+        <div class="cond">ITO CPCB</div>
+      </div>
+
+      <div class="rtemp">AQI</div>
+    </div>
+  </aside>
+</div>
+
+<!-- =========================================================
+     MACHINE LEARNING MODELS
+     ========================================================= -->
+
+<div class="forecast-section">
+  <div class="section-heading">
+    <div>
+      <div class="section-eyebrow">MACHINE LEARNING</div>
+
+      <h2>Forecasting Models</h2>
+
+      <p>
+        The system uses multiple machine learning approaches to identify
+        pollution patterns and forecast future AQI.
+      </p>
+    </div>
+  </div>
+
+  <div class="model-grid">
+    <!-- LINEAR REGRESSION -->
+
+    <div class="card model-card">
+      <div class="model-number">01</div>
+
+      <div class="place">Model</div>
+
+      <div class="cond">Linear Regression</div>
+
+      <p>
+        Estimates future AQI using relationships between historical pollution
+        features and AQI values.
+      </p>
+    </div>
+
+    <!-- RANDOM FOREST -->
+
+    <div class="card model-card">
+      <div class="model-number">02</div>
+
+      <div class="place">Model</div>
+
+      <div class="cond">Random Forest</div>
+
+      <p>
+        Uses multiple decision trees to capture non-linear relationships in
+        pollution data.
+      </p>
+    </div>
+
+    <!-- XGBOOST -->
+
+    <div class="card model-card">
+      <div class="model-number">03</div>
+
+      <div class="place">Model</div>
+
+      <div class="cond">XGBoost</div>
+
+      <p>
+        Uses gradient boosting to learn complex patterns from historical air
+        quality observations.
+      </p>
+    </div>
+
+    <!-- LSTM -->
+
+    <div class="card model-card">
+      <div class="model-number">04</div>
+
+      <div class="place">Model</div>
+
+      <div class="cond">LSTM</div>
+
+      <p>
+        Learns sequential pollution patterns and long-term dependencies in
+        time-series data.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     ACTUAL VS PREDICTED
+     ========================================================= -->
+
+<div class="forecast-section">
+  <div class="analysis-grid">
+    <div class="card analysis-card">
+      <div class="section-eyebrow">MODEL ANALYSIS</div>
+
+      <h2>Actual vs Predicted</h2>
+
+      <p>
+        This section will compare the actual AQI values with the values
+        predicted by the selected machine learning model.
+      </p>
+
+      <div class="analysis-placeholder">
+        <span> ML prediction chart will appear here </span>
+      </div>
+    </div>
+
+    <!-- MODEL EVALUATION -->
+
+    <div class="card analysis-card">
+      <div class="section-eyebrow">MODEL EVALUATION</div>
+
+      <h2>Performance Metrics</h2>
+
+      <p>
+        Model performance will be evaluated using standard regression metrics
+        after training and testing.
+      </p>
+
+      <div class="metric-list">
+        <div class="metric-item">
+          <span> MAE </span>
+
+          <strong> Pending </strong>
+        </div>
+
+        <div class="metric-item">
+          <span> RMSE </span>
+
+          <strong> Pending </strong>
+        </div>
+
+        <div class="metric-item">
+          <span> R² Score </span>
+
+          <strong> Pending </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

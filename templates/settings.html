@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - Air Quality Forecasting System{% endblock %}
+
+{% block content %}
+
+<section class="content">
+
+    <!-- Page Header -->
+    <div class="page-head">
+        <div>
+            <div class="eyebrow">SYSTEM</div>
+            <h1>Dashboard Settings</h1>
+            <p>Manage your dashboard preferences and air quality monitoring settings.</p>
+        </div>
+    </div>
+
+
+    <!-- Settings Layout -->
+    <div class="settings-layout">
+
+        <!-- Left Column -->
+        <div class="settings-main">
+
+            <!-- Profile Settings -->
+            <div class="glass-card settings-card">
+
+                <div class="settings-card-header">
+                    <div>
+                        <div class="settings-card-title">Profile</div>
+                        <div class="settings-card-subtitle">
+                            Manage your basic account information.
+                        </div>
+                    </div>
+
+                    <div class="settings-icon">
+                        <svg>
+                            <use href="#i-gear"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="settings-fields">
+
+                    <div class="settings-field">
+                        <label for="profile-name">Name</label>
+                        <input
+                            type="text"
+                            id="profile-name"
+                            class="settings-input"
+                            placeholder="Your name"
+                            value=""
+                        >
+                    </div>
+
+                    <div class="settings-field">
+                        <label for="profile-email">Email</label>
+                        <input
+                            type="email"
+                            id="profile-email"
+                            class="settings-input"
+                            placeholder="Your email"
+                            value=""
+                        >
+                    </div>
+
+                </div>
+
+                <button type="button" class="settings-button">
+                    Save Profile
+                </button>
+
+            </div>
+
+
+            <!-- Notifications -->
+            <div class="glass-card settings-card">
+
+                <div class="settings-card-header">
+                    <div>
+                        <div class="settings-card-title">Notifications</div>
+                        <div class="settings-card-subtitle">
+                            Control the notifications displayed by the system.
+                        </div>
+                    </div>
+
+                    <div class="settings-icon">
+                        <svg>
+                            <use href="#i-bell"></use>
+                        </svg>
+                    </div>
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div class="settings-option-info">
+                        <div class="settings-option-title">
+                            AQI Alerts
+                        </div>
+
+                        <div class="settings-option-description">
+                            Receive alerts when air quality reaches unhealthy levels.
+                        </div>
+                    </div>
+
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div class="settings-option-info">
+                        <div class="settings-option-title">
+                            Forecast Updates
+                        </div>
+
+                        <div class="settings-option-description">
+                            Receive updates when new air quality forecasts are available.
+                        </div>
+                    </div>
+
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div class="settings-option-info">
+                        <div class="settings-option-title">
+                            System Notifications
+                        </div>
+
+                        <div class="settings-option-description">
+                            Receive important dashboard and system notifications.
+                        </div>
+                    </div>
+
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Monitoring Preferences -->
+            <div class="glass-card settings-card">
+
+                <div class="settings-card-header">
+                    <div>
+                        <div class="settings-card-title">Monitoring Preferences</div>
+                        <div class="settings-card-subtitle">
+                            Select the location and data source used by the dashboard.
+                        </div>
+                    </div>
+
+                    <div class="settings-icon">
+                        <svg>
+                            <use href="#i-globe"></use>
+                        </svg>
+                    </div>
+                </div>
+
+
+                <div class="settings-fields">
+
+                    <div class="settings-field">
+
+                        <label for="default-location">
+                            Default Location
+                        </label>
+
+                        <select
+                            id="default-location"
+                            class="settings-input"
+                        >
+                            <option value="delhi">Delhi, India</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="settings-field">
+
+                        <label for="monitoring-station">
+                            Monitoring Station
+                        </label>
+
+                        <select
+                            id="monitoring-station"
+                            class="settings-input"
+                        >
+                            <option value="ito-cpcb">
+                                ITO CPCB
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Column -->
+        <aside class="settings-side">
+
+            <!-- Current Location -->
+            <div class="glass-card settings-summary">
+
+                <div class="summary-label">
+                    DEFAULT LOCATION
+                </div>
+
+                <div class="summary-location">
+                    <svg>
+                        <use href="#i-pin"></use>
+                    </svg>
+
+                    <div>
+                        <strong>Delhi</strong>
+                        <span>India</span>
+                    </div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                    <span>Monitoring Station</span>
+                    <strong>ITO CPCB</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>AQI Unit</span>
+                    <strong>US AQI</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Data Type</span>
+                    <strong>Air Quality</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Data Source -->
+            <div class="glass-card settings-summary">
+
+                <div class="summary-label">
+                    DATA SOURCE
+                </div>
+
+                <div class="source-title">
+                    ITO CPCB
+                </div>
+
+                <p class="source-description">
+                    Air quality observations from the selected monitoring
+                    station are used for analysis and forecasting.
+                </p>
+
+                <div class="source-status">
+                    <span class="status-dot"></span>
+                    Monitoring Active
+                </div>
+
+            </div>
+
+
+            <!-- Forecast Information -->
+            <div class="glass-card settings-summary">
+
+                <div class="summary-label">
+                    FORECAST
+                </div>
+
+                <div class="forecast-setting">
+                    <span>Forecast Horizon</span>
+                    <strong>24 Hours</strong>
+                </div>
+
+                <div class="forecast-setting">
+                    <span>Forecast Type</span>
+                    <strong>Machine Learning</strong>
+                </div>
+
+                <div class="forecast-setting">
+                    <span>Models</span>
+                    <strong>4 Models</strong>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script>
+    // Settings page UI only.
+    // Backend saving will be connected later.
+
+    document.querySelectorAll(".toggle input").forEach(function (toggle) {
+
+        toggle.addEventListener("change", function () {
+
+            console.log(
+                "Setting changed:",
+                this.checked
+            );
+
+        });
+
+    });
+</script>
+
+{% endblock %}

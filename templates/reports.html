@@ -1,0 +1,303 @@
+{% extends "base.html" %} {% block title %}Reports | Air Quality Forecasting
+System{% endblock %} {% block content %}
+
+<div class="hero">
+  <span class="chip">Air Quality Reports</span>
+
+  <h1>
+    <span class="ln l1">
+      <span>AQI</span>
+    </span>
+
+    <span class="ln l2">
+      <span>Reports</span>
+    </span>
+  </h1>
+
+  <p class="blurb">
+    Analyze historical air quality, pollutant levels, AQI trends, and machine
+    learning predictions for Delhi.
+  </p>
+</div>
+
+<!-- =====================================================
+     AQI TREND
+     ===================================================== -->
+
+<div class="bottom">
+  <div class="forecast">
+    <div class="temps">
+      <div class="t">
+        <span>165</span>
+        <small>AQI</small>
+        <svg><use href="#i-cloud" /></svg>
+      </div>
+
+      <div class="t">
+        <span>178</span>
+        <small>AQI</small>
+        <svg><use href="#i-cloud2" /></svg>
+      </div>
+
+      <div class="t">
+        <span>185</span>
+        <small>AQI</small>
+        <svg><use href="#i-cloud2" /></svg>
+      </div>
+
+      <div class="t">
+        <span>172</span>
+        <small>AQI</small>
+        <svg><use href="#i-hail" /></svg>
+      </div>
+
+      <div class="t">
+        <span>160</span>
+        <small>AQI</small>
+        <svg><use href="#i-sun" /></svg>
+      </div>
+
+      <div class="t">
+        <span>155</span>
+        <small>AQI</small>
+        <svg><use href="#i-cloud" /></svg>
+      </div>
+    </div>
+
+    <svg class="wave" viewBox="0 0 835 140" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="reportFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".22" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="reportLine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity=".2" />
+
+          <stop offset=".5" stop-color="#fff" stop-opacity="1" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity=".3" />
+        </linearGradient>
+      </defs>
+
+      <path
+        class="fill"
+        d="M0,80 C110,40 200,95 320,55
+                     C440,30 520,85 620,60
+                     C700,40 780,65 835,45
+                     L835,140 L0,140 Z"
+        fill="url(#reportFill)"
+      />
+
+      <path
+        class="line"
+        d="M0,80 C110,40 200,95 320,55
+                     C440,30 520,85 620,60
+                     C700,40 780,65 835,45"
+        fill="none"
+        stroke="url(#reportLine)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+    </svg>
+
+    <div class="days">
+      <span class="on">Mon</span>
+      <span>Tue</span>
+      <span>Wed</span>
+      <span>Thu</span>
+      <span>Fri</span>
+      <span>Sat</span>
+    </div>
+  </div>
+
+  <!-- =================================================
+         AQI SUMMARY
+         ================================================= -->
+
+  <aside class="rail">
+    <div class="card big">
+      <div class="place">
+        <svg><use href="#i-pin" /></svg>
+        Delhi, India
+      </div>
+
+      <div class="big-temp">185</div>
+
+      <div class="metrics">
+        <span>Average AQI</span>
+        <span>Moderate</span>
+      </div>
+    </div>
+
+    <div class="card row">
+      <div>
+        <div class="loc">PM2.5</div>
+        <div class="cond">95 µg/m³</div>
+      </div>
+
+      <div class="rtemp">PM2.5</div>
+    </div>
+
+    <div class="card row">
+      <div>
+        <div class="loc">PM10</div>
+        <div class="cond">145 µg/m³</div>
+      </div>
+
+      <div class="rtemp">PM10</div>
+    </div>
+
+    <div class="card row">
+      <div>
+        <div class="loc">NO₂</div>
+        <div class="cond">48 µg/m³</div>
+      </div>
+
+      <div class="rtemp">NO₂</div>
+    </div>
+  </aside>
+</div>
+
+<!-- =====================================================
+     REPORT ANALYSIS
+     ===================================================== -->
+
+<div class="report-section">
+  <div class="section-heading">
+    <div>
+      <div class="section-eyebrow">AIR QUALITY ANALYSIS</div>
+
+      <h2>Report Overview</h2>
+
+      <p>
+        Summary of historical pollution observations and machine learning
+        analysis for the selected monitoring station.
+      </p>
+    </div>
+  </div>
+
+  <div class="report-grid">
+    <!-- Historical Data -->
+
+    <div class="card report-card">
+      <div class="report-number">01</div>
+
+      <div class="place">Historical Analysis</div>
+
+      <div class="cond">AQI Trend</div>
+
+      <p>
+        Historical AQI observations will be analyzed to identify pollution
+        patterns and changes over time.
+      </p>
+
+      <div class="report-status">Data Analysis Pending</div>
+    </div>
+
+    <!-- Pollutant Analysis -->
+
+    <div class="card report-card">
+      <div class="report-number">02</div>
+
+      <div class="place">Pollutant Analysis</div>
+
+      <div class="cond">PM2.5 • PM10 • NO₂</div>
+
+      <p>
+        Major pollutant concentrations will be analyzed to understand their
+        contribution to air quality conditions.
+      </p>
+
+      <div class="report-status">Analysis Pending</div>
+    </div>
+
+    <!-- Actual vs Predicted -->
+
+    <div class="card report-card">
+      <div class="report-number">03</div>
+
+      <div class="place">Actual vs Predicted</div>
+
+      <div class="cond">ML Forecast Comparison</div>
+
+      <p>
+        Actual AQI values will be compared with predicted values generated by
+        the selected machine learning model.
+      </p>
+
+      <div class="report-status">ML Integration Pending</div>
+    </div>
+
+    <!-- Model Performance -->
+
+    <div class="card report-card">
+      <div class="report-number">04</div>
+
+      <div class="place">Model Performance</div>
+
+      <div class="cond">Regression Metrics</div>
+
+      <p>
+        Linear Regression, Random Forest, XGBoost, and LSTM models will be
+        evaluated using standard forecasting metrics.
+      </p>
+
+      <div class="report-status">Evaluation Pending</div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     MODEL METRICS
+     ===================================================== -->
+
+<div class="report-section">
+  <div class="analysis-grid">
+    <div class="card analysis-card">
+      <div class="section-eyebrow">PREDICTION ANALYSIS</div>
+
+      <h2>Actual vs Predicted AQI</h2>
+
+      <p>
+        The graph below will display the difference between observed AQI values
+        and model predictions after ML integration.
+      </p>
+
+      <div class="analysis-placeholder">
+        <span> AQI prediction chart will appear here </span>
+      </div>
+    </div>
+
+    <div class="card analysis-card">
+      <div class="section-eyebrow">MODEL EVALUATION</div>
+
+      <h2>Performance Metrics</h2>
+
+      <p>
+        Model performance will be calculated after training and testing using
+        the historical dataset.
+      </p>
+
+      <div class="metric-list">
+        <div class="metric-item">
+          <span>MAE</span>
+          <strong>Pending</strong>
+        </div>
+
+        <div class="metric-item">
+          <span>RMSE</span>
+          <strong>Pending</strong>
+        </div>
+
+        <div class="metric-item">
+          <span>R² Score</span>
+          <strong>Pending</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

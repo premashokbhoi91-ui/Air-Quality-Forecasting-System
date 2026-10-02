@@ -1,0 +1,243 @@
+{% extends "base.html" %} {% block title %}Air Quality Dashboard{% endblock %}
+{% block content %}
+
+<div class="hero">
+  <span class="chip">Air Quality Forecast</span>
+
+  <h1>
+    <span class="ln l1">
+      <span>Delhi</span>
+    </span>
+
+    <span class="ln l2">
+      <span>Air Quality</span>
+    </span>
+  </h1>
+
+  <p class="blurb">
+    Monitor current air quality and forecast future AQI levels using pollution
+    data from the ITO CPCB monitoring station.
+  </p>
+</div>
+
+<div class="bottom">
+  <!-- AQI FORECAST -->
+  <div class="forecast">
+    <div class="temps">
+      <!-- CURRENT -->
+      <div class="t">
+        <span>185</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+
+      <!-- +1 HOUR -->
+      <div class="t">
+        <span>172</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud2" />
+        </svg>
+      </div>
+
+      <!-- +2 HOURS -->
+      <div class="t">
+        <span>160</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud2" />
+        </svg>
+      </div>
+
+      <!-- +3 HOURS -->
+      <div class="t">
+        <span>148</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-hail" />
+        </svg>
+      </div>
+
+      <!-- +4 HOURS -->
+      <div class="t">
+        <span>155</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-sun" />
+        </svg>
+      </div>
+
+      <!-- +5 HOURS -->
+      <div class="t">
+        <span>168</span>
+        <small>AQI</small>
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- AQI TREND GRAPH -->
+    <svg class="wave" viewBox="0 0 835 140" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wf" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".22" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity=".2" />
+
+          <stop offset=".5" stop-color="#fff" stop-opacity="1" />
+
+          <stop offset="1" stop-color="#fff" stop-opacity=".3" />
+        </linearGradient>
+      </defs>
+
+      <path
+        class="fill"
+        d="M0,72
+                     C110,32 200,98 320,62
+                     C440,26 520,92 620,56
+                     C700,28 780,60 835,48
+                     L835,140
+                     L0,140 Z"
+        fill="url(#wf)"
+      />
+
+      <path
+        class="line"
+        pathLength="1"
+        d="M0,72
+                     C110,32 200,98 320,62
+                     C440,26 520,92 620,56
+                     C700,28 780,60 835,48"
+        fill="none"
+        stroke="url(#wg)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+    </svg>
+
+    <!-- FORECAST TIME -->
+    <div class="days">
+      <span class="on">Now</span>
+
+      <span>+1h</span>
+
+      <span>+2h</span>
+
+      <span>+3h</span>
+
+      <span>+4h</span>
+
+      <span>+5h</span>
+    </div>
+  </div>
+
+  <!-- RIGHT AQI INFORMATION -->
+  <aside class="rail">
+    <!-- CURRENT AQI -->
+    <div class="card big">
+      <div class="place">
+        <svg>
+          <use href="#i-pin" />
+        </svg>
+
+        Delhi, India
+      </div>
+
+      <div class="big-temp">185</div>
+
+      <div class="metrics">
+        <span>
+          PM2.5
+          <strong>95 µg/m³</strong>
+        </span>
+
+        <span>
+          PM10
+          <strong>145 µg/m³</strong>
+        </span>
+
+        <span>
+          NO₂
+          <strong>48 µg/m³</strong>
+        </span>
+      </div>
+    </div>
+
+    <!-- AQI CATEGORY -->
+    <div class="card row">
+      <div>
+        <div class="loc">Current AQI</div>
+
+        <div class="cond">Moderate</div>
+      </div>
+
+      <div class="rtemp">
+        185
+
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- OZONE -->
+    <div class="card row">
+      <div>
+        <div class="loc">Ozone (O₃)</div>
+
+        <div class="cond">72 µg/m³</div>
+      </div>
+
+      <div class="rtemp">
+        O₃
+
+        <svg>
+          <use href="#i-cloud" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- MONITORING STATION -->
+    <div class="card row">
+      <div>
+        <div class="loc">Monitoring Station</div>
+
+        <div class="cond">ITO CPCB</div>
+      </div>
+
+      <div class="rtemp">
+        AQI
+
+        <svg>
+          <use href="#i-cloud2" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- AIR QUALITY ALERT -->
+    <div class="card row">
+      <div>
+        <div class="loc">Air Quality Alert</div>
+
+        <div class="cond">Moderate pollution</div>
+      </div>
+
+      <div class="rtemp">
+        Alert
+
+        <svg>
+          <use href="#i-bell" />
+        </svg>
+      </div>
+    </div>
+  </aside>
+</div>
+
+{% endblock %}
