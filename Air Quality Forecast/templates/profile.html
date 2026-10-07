@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile - Air Quality Forecasting System{% endblock %}
+
+{% block content %}
+
+<section class="content">
+
+    <div class="page-head">
+        <div>
+            <div class="eyebrow">ACCOUNT</div>
+            <h1>My Profile</h1>
+            <p>Your account details.</p>
+        </div>
+    </div>
+
+    <div class="glass-card settings-card">
+
+        <div class="settings-card-header">
+            <div>
+                <div class="settings-card-title">{{ current_user.name }}</div>
+                <div class="settings-card-subtitle">{{ current_user.email }}</div>
+            </div>
+        </div>
+
+        <div class="settings-fields">
+
+            <div class="settings-field">
+                <label for="p-name">Name</label>
+                <input type="text" id="p-name" class="settings-input"
+                       value="{{ current_user.name }}" readonly>
+            </div>
+
+            <div class="settings-field">
+                <label for="p-email">Email</label>
+                <input type="email" id="p-email" class="settings-input"
+                       value="{{ current_user.email }}" readonly>
+            </div>
+
+            <div class="settings-field">
+                <label for="p-since">Member Since</label>
+                <input type="text" id="p-since" class="settings-input"
+                       value="{{ current_user.created_at.strftime('%d %B %Y') }}" readonly>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
